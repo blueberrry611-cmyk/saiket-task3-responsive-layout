@@ -1,0 +1,129 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #1f2a44;
+  background: #f1f4fb;
+  line-height: 1.6;
+}
+
+/* ---------- Desktop: grid layout ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+  min-height: 100vh;
+  gap: 16px;
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header  { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main    { grid-area: main; }
+.footer  { grid-area: footer; }
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 24px;
+  background: #2f5bea;
+  color: #fff;
+  border-radius: 12px;
+}
+
+.logo { margin: 0; font-size: 1.5rem; }
+
+.nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav a:hover { text-decoration: underline; }
+
+.sidebar, .main {
+  background: #fff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(31, 42, 68, 0.08);
+}
+
+.sidebar h2, .main h2 { margin-top: 0; }
+
+.sidebar ul { list-style: none; margin: 0; padding: 0; }
+
+.sidebar li + li { margin-top: 8px; }
+
+.sidebar a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #1f2a44;
+  text-decoration: none;
+  background: #eef2fd;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar a:hover { background: #2f5bea; color: #fff; }
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.info-box {
+  padding: 16px;
+  background: #eef2fd;
+  border-radius: 10px;
+}
+
+.info-box h3 { margin: 0 0 6px; }
+.info-box p { margin: 0; }
+
+.footer {
+  padding: 16px;
+  text-align: center;
+  background: #1f2a44;
+  color: #fff;
+  border-radius: 12px;
+}
+
+.footer p { margin: 0; }
+
+/* ---------- Tablet: smaller sidebar ---------- */
+@media (max-width: 992px) {
+  .layout { grid-template-columns: 200px 1fr; }
+  .info-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Mobile: stacked layout ---------- */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .header { flex-direction: column; text-align: center; }
+  .nav { justify-content: center; }
+}

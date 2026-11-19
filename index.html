@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Webpage Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="header">
+      <h1 class="logo">MyWebsite</h1>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <aside class="sidebar">
+      <h2>Categories</h2>
+      <ul>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Design</a></li>
+        <li><a href="#">Development</a></li>
+        <li><a href="#">Business</a></li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <h2>Welcome to Our Website</h2>
+      <p>This layout uses CSS Grid on larger screens, with the header across the top, a sidebar on the left, the main content beside it and a footer at the bottom.</p>
+      <p>Resize your browser window to below 768px wide. The layout switches to a single stacked column, which suits phones and small tablets.</p>
+      <section class="info-grid">
+        <article class="info-box">
+          <h3>Responsive</h3>
+          <p>Adapts to every screen size.</p>
+        </article>
+        <article class="info-box">
+          <h3>Flexible</h3>
+          <p>Built with CSS Grid and Flexbox.</p>
+        </article>
+        <article class="info-box">
+          <h3>Accessible</h3>
+          <p>Uses semantic HTML tags.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 MyWebsite. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
